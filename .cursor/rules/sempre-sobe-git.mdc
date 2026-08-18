@@ -1,0 +1,14 @@
+---
+description: Sempre commitar e dar push no GitHub após mudanças no guia
+alwaysApply: true
+---
+
+# Sempre sobe no Git
+
+Depois de qualquer alteração no site, **commit e `git push origin HEAD` na hora**. Não esperar o usuário pedir.
+
+- Mensagem de commit curta, em português, focada no porquê
+- Identidade só via `-c` no commit: `joaoschnitzspahn-dev` / `joaoschnitzspahn-dev@users.noreply.github.com`
+- Nunca alterar `git config`
+- Nunca `--force` em `main`, nunca `--no-verify`
+- PowerShell: usar `;` no lugar de `&&`; mensagem com `-m "texto"` (sem heredoc bash)
