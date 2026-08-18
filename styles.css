@@ -339,6 +339,10 @@ input {
   color: var(--muted);
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: 1.55;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   animation: rise 0.7s var(--ease) 0.16s backwards;
 }
 
@@ -578,6 +582,10 @@ input {
   margin: 0.4rem 0 0;
   max-width: 40rem;
   color: var(--muted);
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .subgroup {
@@ -594,6 +602,10 @@ input {
   margin: 0.2rem 0 0;
   color: var(--muted);
   font-size: 0.9rem;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .place.is-featured {
@@ -622,6 +634,10 @@ input {
   margin: 0.45rem 0 0;
   color: var(--muted);
   font-size: 0.9rem;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .place-actions {
@@ -793,7 +809,10 @@ input {
 .footer-note {
   max-width: 24rem;
   margin: 0;
-  text-align: right;
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .fab-sos {
@@ -930,7 +949,8 @@ input {
   }
 
   .footer-note {
-    text-align: left;
+    text-align: justify;
+    text-align-last: left;
   }
 
   .fab-sos {
