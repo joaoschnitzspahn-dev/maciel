@@ -77,9 +77,9 @@ const SECTIONS = [
   {
     id: "turismo",
     tone: "sun",
-    eyebrow: "01 · o motivo da viagem",
+    eyebrow: "01 · Parque temático",
     title: "Beto Carrero World",
-    lead: "A uns minutos da casa. Chega cedo, volta só quando as pernas pedirem arrego.",
+    lead: "Parque a poucos minutos da casa. Recomendamos chegar no início do dia.",
     places: [
       {
         name: "Beto Carrero World",
@@ -92,13 +92,13 @@ const SECTIONS = [
   {
     id: "praias",
     tone: "sea",
-    eyebrow: "02 · molha o pé",
+    eyebrow: "02 · Litoral",
     title: "Praias",
-    lead: "Tem pra pescar, pra pular onda e pra ir com criança. Escolhe o clima do dia.",
+    lead: "Opções para pesca, praias com mais movimento e trechos mais calmos para ir com crianças.",
     groups: [
       {
-        title: "Pra pescar",
-        note: "Mar mais calmo, trapiche e aquela manhã sem pressa.",
+        title: "Pesca",
+        note: "Mar mais calmo e trapiche.",
         places: [
           {
             name: "Praia do Trapiche",
@@ -118,8 +118,8 @@ const SECTIONS = [
         ],
       },
       {
-        title: "Mais agitadas",
-        note: "Onda, movimento e energia de verão.",
+        title: "Mais movimento",
+        note: "Praias com mais onda e movimento.",
         places: [
           {
             name: "Praia Grande",
@@ -134,8 +134,8 @@ const SECTIONS = [
         ],
       },
       {
-        title: "Pra curtir",
-        note: "Caminhada, pôr do sol e zero compromisso.",
+        title: "Caminhada e lazer",
+        note: "Indicadas para caminhar e ver o pôr do sol.",
         places: [
           {
             name: "Praia do Quilombo",
@@ -160,8 +160,8 @@ const SECTIONS = [
         ],
       },
       {
-        title: "Com as crianças",
-        note: "Água mais rasa e ritmo mais leve.",
+        title: "Com crianças",
+        note: "Água mais rasa e mar mais calmo.",
         places: [
           {
             name: "Praia da Paciência",
@@ -195,9 +195,9 @@ const SECTIONS = [
   {
     id: "aventura",
     tone: "coral",
-    eyebrow: "03 · sobe, desce, acelera",
+    eyebrow: "03 · Passeios",
     title: "Parapente e buggy",
-    lead: "Pra quem cansou de só olhar o mar de baixo.",
+    lead: "Passeios de buggy e voos de parapente em Armação.",
     places: [
       {
         name: "Penha Passeios",
@@ -214,9 +214,9 @@ const SECTIONS = [
   {
     id: "comer",
     tone: "peach",
-    eyebrow: "04 · fome de férias",
-    title: "Comer & beber",
-    lead: "Sushi, pizza, petisco, burger e uma noite mais longa se der vontade.",
+    eyebrow: "04 · Gastronomia",
+    title: "Comer e beber",
+    lead: "Restaurantes, lanchonetes, pizzarias, bares e casas noturnas próximos.",
     groups: [
       {
         title: "Restaurantes",
@@ -329,7 +329,7 @@ const SECTIONS = [
         ],
       },
       {
-        title: "A noite",
+        title: "Vida noturna",
         places: [
           {
             name: "Pacífico",
@@ -353,9 +353,9 @@ const SECTIONS = [
   {
     id: "servicos",
     tone: "sand",
-    eyebrow: "05 · a vida real ainda existe",
+    eyebrow: "05 · Comércio e serviços",
     title: "Serviços",
-    lead: "Mercado, pão quente, lavanderia e posto — o básico pra continuar de férias.",
+    lead: "Supermercados, padaria, lojas, lavanderia, posto de combustível e mecânica.",
     groups: [
       {
         title: "Mercados",
@@ -437,9 +437,9 @@ const SECTIONS = [
   {
     id: "emergencia",
     tone: "sos",
-    eyebrow: "06 · se der ruim",
+    eyebrow: "06 · Emergência",
     title: "Emergência",
-    lead: "Torcer pra não usar. Se precisar, liga primeiro — depois vê o mapa.",
+    lead: "Polícia, pronto atendimento, hospital, clínicas e farmácia 24 horas. Em urgência, ligue antes de ir.",
     emergency: true,
     places: [
       {
@@ -547,7 +547,7 @@ function renderPlace(place, { sos = false, section = null } = {}) {
         </button>
         <a class="btn btn-map" href="${mapsUrl(place.query)}" target="_blank" rel="noopener noreferrer">
           ${iconPin}
-          Me leva
+          Abrir no Maps
         </a>
       </div>
     </article>
@@ -635,7 +635,7 @@ function render(term = "") {
 
   if (term) {
     metaEl.textContent =
-      total === 1 ? "1 lugar no radar" : `${total} lugares no radar`;
+      total === 1 ? "1 resultado" : `${total} resultados`;
   }
 
   bindMotion();
