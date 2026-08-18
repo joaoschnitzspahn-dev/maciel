@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <rect width="128" height="128" rx="28" fill="#1B3A2F"/>
+  <path d="M64 18 L104 32 V64 C104 88 86 106 64 114 C42 106 24 88 24 64 V32 Z" fill="#C9A227"/>
+  <path d="M64 26 L96 38 V64 C96 84 81 99 64 106 C47 99 32 84 32 64 V38 Z" fill="#143028"/>
+  <path d="M64 38 L69.5 54.5 H87 L73 65 L78.5 82 L64 71.5 L49.5 82 L55 65 L41 54.5 H58.5 Z" fill="#F3D56B"/>
+  <text x="64" y="102" text-anchor="middle" fill="#F3D56B" font-family="Arial Black, Arial, sans-serif" font-size="14" font-weight="700">PM</text>
+</svg>

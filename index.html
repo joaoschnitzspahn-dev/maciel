@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FFF4E2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Maciel" />
+    <meta
+      name="description"
+      content="Guia de férias do Airbnb do Maciel em Penha, SC. Praias, restaurantes, serviços e emergência perto do Beto Carrero World."
+    />
+    <meta property="og:title" content="Airbnb do Maciel — modo férias" />
+    <meta
+      property="og:description"
+      content="Chegou em Penha. Aqui está o guia pra curtir a estadia."
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <title>Airbnb do Maciel — modo férias</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://commons.wikimedia.org" />
+    <link rel="preconnect" href="https://upload.wikimedia.org" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="blobs" aria-hidden="true">
+      <span class="blob blob-sun"></span>
+      <span class="blob blob-sea"></span>
+      <span class="blob blob-coral"></span>
+    </div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#topo">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong>Airbnb do Maciel</strong>
+            <small>modo férias</small>
+          </span>
+        </a>
+
+        <form class="search" role="search" data-search>
+          <label class="sr-only" for="busca">Buscar no guia</label>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-3.2-3.2" />
+          </svg>
+          <input
+            id="busca"
+            type="search"
+            name="q"
+            placeholder="pizza, praia, farmácia…"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+          <kbd>/</kbd>
+        </form>
+
+        <a class="header-sos" href="#emergencia">SOS</a>
+      </div>
+    </header>
+
+    <main id="topo">
+      <section class="hero">
+        <p class="hero-kicker"><span class="pulse"></span> Penha · SC · férias ligadas</p>
+        <h1>
+          Chegou.<br />
+          <em>Agora é praia.</em>
+        </h1>
+        <p class="hero-lead">
+          O guia do Maciel pra quem veio descansar — e pra quem não consegue ficar parado.
+          Parque, mar, comida e o SOS, se precisar.
+        </p>
+
+        <div class="horizon" aria-hidden="true">
+          <span class="horizon-sun"></span>
+          <svg class="wave wave-back" viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <path d="M0 48 C 180 12, 320 70, 480 38 S 780 10, 940 46 1100 74, 1200 40 V 80 H 0 Z" />
+          </svg>
+          <svg class="wave wave-front" viewBox="0 0 1200 80" preserveAspectRatio="none">
+            <path d="M0 42 C 150 8, 280 72, 430 40 S 720 8, 880 44 1080 78, 1200 36 V 80 H 0 Z" />
+          </svg>
+        </div>
+
+        <nav class="toc" aria-label="Seções do guia">
+          <a href="#turismo" data-tone="sun"><span>01</span> Parque</a>
+          <a href="#praias" data-tone="sea"><span>02</span> Praia</a>
+          <a href="#aventura" data-tone="coral"><span>03</span> Aventura</a>
+          <a href="#comer" data-tone="peach"><span>04</span> Fome</a>
+          <a href="#servicos" data-tone="sand"><span>05</span> Mercado</a>
+          <a href="#emergencia" data-tone="sos"><span>06</span> SOS</a>
+        </nav>
+      </section>
+
+      <div id="conteudo">
+        <p class="results-meta" data-results-meta hidden></p>
+        <div id="guia" data-guide></div>
+        <p class="empty" data-empty hidden>
+          Essa busca não pegou onda. Tenta outro nome — pizza, praia, farmácia…
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p class="footer-brand">Airbnb do Maciel</p>
+        <p>Armação · Penha · boa viagem de volta, mas ainda não.</p>
+      </div>
+      <p class="footer-note">
+        Feito pra abrir no celular, de toalha ou de chinelo. Um toque e o Maps mostra a rota.
+        Fotos de Penha: Wikimedia Commons e Ministério do Turismo.
+      </p>
+    </footer>
+
+    <a class="fab-sos" href="#emergencia" aria-label="Ir para emergência">SOS</a>
+
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

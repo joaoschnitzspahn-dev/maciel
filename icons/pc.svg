@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <rect width="128" height="128" rx="28" fill="#1A2744"/>
+  <path d="M64 18 L104 34 V62 C104 88 86 106 64 114 C42 106 24 88 24 62 V34 Z" fill="#D6B25E"/>
+  <path d="M64 26 L96 40 V62 C96 84 81 99 64 106 C47 99 32 84 32 62 V40 Z" fill="#12203A"/>
+  <rect x="58" y="44" width="12" height="36" rx="2" fill="#D6B25E"/>
+  <circle cx="50" cy="62" r="10" fill="none" stroke="#D6B25E" stroke-width="4"/>
+  <circle cx="78" cy="62" r="10" fill="none" stroke="#D6B25E" stroke-width="4"/>
+  <text x="64" y="102" text-anchor="middle" fill="#D6B25E" font-family="Arial Black, Arial, sans-serif" font-size="14" font-weight="700">PC</text>
+</svg>
