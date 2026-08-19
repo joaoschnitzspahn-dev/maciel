@@ -2,5 +2,10 @@
 .env
 .env.*
 node_modules
+package.json
+package-lock.json
+_extract
+_extract-docs.js
+_compress-media.js
 .DS_Store
 Thumbs.db
