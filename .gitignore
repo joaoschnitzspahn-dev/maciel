@@ -7,5 +7,6 @@ package-lock.json
 _extract
 _extract-docs.js
 _compress-media.js
+media/videos
 .DS_Store
 Thumbs.db

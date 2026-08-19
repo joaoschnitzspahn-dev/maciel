@@ -53,13 +53,6 @@ const SECTIONS = [
         "Compre com antecedência no cartão (parcelado sem juros) ou no Pix.",
       ],
     },
-    videos: [
-      "./media/videos/01.mp4",
-      "./media/videos/02.mp4",
-      "./media/videos/03.mp4",
-      "./media/videos/04.mp4",
-      "./media/videos/05.mp4",
-    ],
     places: [],
   },
   {
