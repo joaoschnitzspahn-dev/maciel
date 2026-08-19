@@ -768,7 +768,6 @@ input {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  flex-wrap: wrap;
   gap: 0.45rem;
 }
 
@@ -802,35 +801,6 @@ input {
   color: #f4fffc;
 }
 
-.btn-icon {
-  width: 2.25rem;
-  padding: 0;
-  justify-content: center;
-}
-
-.btn-icon span {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
-.btn-call {
-  background: color-mix(in srgb, var(--deep) 12%, white);
-  color: var(--deep);
-}
-
-.btn-zap {
-  background: #25d366;
-  color: #f4fffc;
-}
-
-.place.is-sos .btn-call {
-  background: color-mix(in srgb, #fff 14%, transparent);
-  color: #fff3ec;
-}
-
 .btn-map:hover svg {
   animation: hop 0.5s var(--bounce);
 }
@@ -854,13 +824,6 @@ input {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.btn-icon svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
-  stroke: none;
 }
 
 .place.is-sos {

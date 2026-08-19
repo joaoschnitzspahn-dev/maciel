@@ -13,34 +13,13 @@ const icon = (name) => `./icons/${name}.svg`;
 const gallery = (folder, count) => Array.from({ length: count }, (_, i) => img(folder, i + 1));
 
 function spot(name, address, extras = {}) {
-  const contact = CONTACTS[name] || {};
   return {
     name,
     address,
     query: extras.query || `${name} ${address}`,
-    ...contact,
     ...extras,
   };
 }
-
-const CONTACTS = {
-  "Petisqueira Alírio": { phone: "(47) 3345-5168" },
-  "Sombreiro": { phone: "(47) 3345-9678" },
-  "Lindomar Restaurante e Petisqueira": { phone: "(47) 3345-5530" },
-  "Seikatsu Sushi": { phone: "(47) 3360-9807", whatsapp: "(47) 99238-4852" },
-  "Pizzaria Don Diovani": { phone: "(47) 99225-1625", whatsapp: "(47) 99225-1625" },
-  "La Cazza Pizzaria": { phone: "(47) 3240-0266", whatsapp: "(47) 3398-1189" },
-  "Lupã Praia Alegre": { phone: "(47) 3345-6168", whatsapp: "(47) 99122-9703" },
-  "Panificadora Lupã — Centro": { phone: "(47) 3345-6168", whatsapp: "(47) 99122-9703" },
-  "Lupã Armação": { phone: "(47) 3345-6168", whatsapp: "(47) 99122-9703" },
-  "Pães e Doces Lupã — Gravatá": { phone: "(47) 3345-6168", whatsapp: "(47) 99122-9703" },
-  "Kustom Burgers": { phone: "(47) 3361-8330", whatsapp: "(47) 99963-0596" },
-  "Burger Films — Centro": { phone: "(47) 99215-5989", whatsapp: "(47) 99215-5989" },
-  "Burger Films — Brunetti": { phone: "(47) 99215-5989", whatsapp: "(47) 99215-5989" },
-  "Júlio Lanches": { phone: "(47) 3345-4073" },
-  "Capitão Gato Escuna Pirata": { phone: "(47) 99977-1851", whatsapp: "(47) 99977-1851" },
-  "Escuna Vó Nica": { phone: "(47) 99188-3044", whatsapp: "(47) 99188-3044" },
-};
 
 const COMMONS = {
   "Beto Carrero World": "Novo_Castelo_BCW.jpg",
@@ -634,11 +613,13 @@ const SECTIONS = [
         places: [
           spot("Polícia Militar", "R. Maria Emília de Costa, 50 — Armação, Penha", {
             phone: "190",
+            phoneHref: "tel:190",
             note: "Atendimento 24 horas.",
             photo: icon("pm"),
           }),
           spot("Polícia Civil", "R. Luiz José Nori, 77 — Centro, Penha", {
             phone: "197",
+            phoneHref: "tel:197",
             note: "Segunda a sexta, das 12h às 19h.",
             photo: icon("pc"),
           }),
@@ -649,6 +630,7 @@ const SECTIONS = [
         places: [
           spot("Pronto Atendimento 24 horas", "R. Alfeu Jerônimo da Conceição, 225 — Centro, Penha", {
             phone: "(47) 3240-0284",
+            phoneHref: "tel:+554732400284",
             note: "Urgências e emergências no município. 24 horas.",
             photo: icon("star-of-life"),
           }),
@@ -719,15 +701,10 @@ const iconPin = `
   </svg>
 `;
 
-const iconPhone = `
+const iconCopy = `
   <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M6.6 3.4h2.8c.4 0 .8.3.9.7l.7 2.4c.1.4 0 .8-.3 1.1l-1.3 1.3a12.2 12.2 0 0 0 6.3 6.3l1.3-1.3c.3-.3.7-.4 1.1-.3l2.4.7c.4.1.7.5.7.9v2.8c0 .5-.4 1-1 1C11.8 18.9 5.1 12.2 5.1 4.4c0-.5.5-1 1.5-1z"/>
-  </svg>
-`;
-
-const iconZap = `
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12.1 3.2A8.6 8.6 0 0 0 4.6 16.3L3.8 20.2l4-1.1A8.6 8.6 0 1 0 12.1 3.2zm4.6 12.3c-.2.6-1.2 1.1-1.6 1.2-.5.1-1 .2-2.8-.6-2.2-1-3.6-3.3-3.7-3.4s-1.1-1.5-1.1-2.8.6-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.2.6l-.4.5c-.2.2-.3.4-.1.7.2.4.9 1.4 1.9 2.3 1.2 1 2.2 1.3 2.6 1.5.3.1.5 0 .7-.2l.6-.7c.2-.2.4-.2.7-.1l2.1 1c.2.1.4.2.5.4 0 .5-.5 2-1.7 2.3z"/>
+    <rect x="8" y="8" width="11" height="12" rx="2"/>
+    <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"/>
   </svg>
 `;
 
@@ -736,37 +713,6 @@ function normalize(value) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-}
-
-function nationalDigits(value) {
-  let digits = String(value).replace(/\D/g, "");
-  if (digits.startsWith("55") && digits.length > 11) digits = digits.slice(2);
-  return digits;
-}
-
-function telHref(value) {
-  const digits = nationalDigits(value);
-  if (digits.length <= 4) return `tel:${digits}`;
-  return `tel:+55${digits}`;
-}
-
-function waHref(value) {
-  const digits = nationalDigits(value);
-  if (digits.length !== 11 || digits[2] !== "9") return "";
-  return `https://wa.me/55${digits}`;
-}
-
-function renderContactButtons(place) {
-  const call = place.phone ? telHref(place.phone) : "";
-  const zap = waHref(place.whatsapp || place.phone || "");
-  let html = "";
-  if (call) {
-    html += `<a class="btn btn-icon btn-call" href="${call}" aria-label="Ligar para ${place.name}">${iconPhone}<span>Ligar</span></a>`;
-  }
-  if (zap) {
-    html += `<a class="btn btn-icon btn-zap" href="${zap}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ${place.name}">${iconZap}<span>Zap</span></a>`;
-  }
-  return html;
 }
 
 function photoFor(place) {
@@ -783,7 +729,7 @@ function isSymbol(place) {
 
 function placeMatches(place, term) {
   if (!term) return true;
-  return normalize(`${place.name} ${place.address} ${place.note || ""} ${place.phone || ""}`).includes(term);
+  return normalize(`${place.name} ${place.address} ${place.note || ""}`).includes(term);
 }
 
 function sectionText(section) {
@@ -801,7 +747,9 @@ function sectionText(section) {
 function renderPlace(place, { sos = false } = {}) {
   const featured = place.featured ? " is-featured" : "";
   const sosClass = sos ? " is-sos" : "";
-  const phone = place.phone ? `<a class="phone" href="${telHref(place.phone)}">${place.phone}</a>` : "";
+  const phone = place.phone
+    ? `<a class="phone" href="${place.phoneHref}">${place.phone}</a>`
+    : "";
   const note = place.note ? `<p class="place-note">${place.note}</p>` : "";
   const symbolClass = isSymbol(place) ? " is-symbol" : "";
   const fallback = isSymbol(place) ? "" : ` onerror="this.onerror=null;this.src='${commons(FALLBACK_PHOTO)}'"`;
@@ -818,7 +766,6 @@ function renderPlace(place, { sos = false } = {}) {
         ${phone}
       </div>
       <div class="place-actions">
-        ${renderContactButtons(place)}
         <button class="btn" type="button" data-copy="${place.address}">
           ${iconCopy}
           <span>Copiar</span>
