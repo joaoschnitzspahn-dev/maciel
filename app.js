@@ -53,6 +53,7 @@ const SECTIONS = [
         "Compre com antecedência no cartão (parcelado sem juros) ou no Pix.",
       ],
     },
+    videos: ["./media/parksnet/video.mp4"],
     places: [],
   },
   {

@@ -754,6 +754,14 @@ input {
   background: #1a1714;
 }
 
+.video-grid:has(video:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.video-grid:has(video:only-child) video {
+  height: min(18rem, 56vw);
+}
+
 .place-copy p {
   margin: 0.45rem 0 0;
   color: var(--muted);
